@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <h1 class="text-4xl font-bold mb-4">Welcome to Agile Tales</h1>
+    <p class="text-xl mb-8">Your all-in-one solution for user story mapping and project management.</p>
+    <div class="flex justify-center space-x-4">
+        <a href="{{ url_for('story_map.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Go to Story Maps
+        </a>
+        <a href="{{ url_for('project.index') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+            Go to Projects
+        </a>
+    </div>
+</div>
+{% endblock %}

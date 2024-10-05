@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-4">Your Projects</h1>
+    <a href="{{ url_for('project.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block">
+        Create New Project
+    </a>
+
+    {% if projects %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% for project in projects %}
+                <div class="bg-white shadow-md rounded-lg p-4">
+                    <h2 class="text-xl font-semibold mb-2">{{ project.title }}</h2>
+                    <p class="text-gray-600 mb-4">{{ project.description|truncate(100) }}</p>
+                    <!-- Add view, edit, delete links here once implemented -->
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="text-gray-600">You haven't created any projects yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
