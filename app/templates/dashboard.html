@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Story Mapper{% endblock %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Product Dashboard</h1>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    {% for product in products %}
+    <a href="{{ url_for('main.story_map', product_id=product.id) }}" class="bg-white p-4 rounded shadow hover:shadow-lg transition-shadow">
+        <h2 class="text-xl font-semibold">{{ product.name }}</h2>
+        <p class="text-gray-600">Click to view or edit story map</p>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}
